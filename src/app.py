@@ -1,12 +1,9 @@
 from dash import html, dcc, Dash
 from dash.dependencies import Input, Output
-import dash
-
-# Connect to main src.py file
-from view import app
 
 # Connect to your src pages
 from pages import Composition, Distribution, Comparative
+import dash_bootstrap_components as dbc
 
 # Connect the navbar to the index
 from components import navbar
@@ -17,6 +14,9 @@ from src.pages.Distribution import distribution_dash
 # Define the navbar
 nav = navbar.Navbar()
 
+app = Dash(__name__,meta_tags=[{"name": "viewport", "content": "width=device-width"}],
+                external_stylesheets=[dbc.themes.BOOTSTRAP], suppress_callback_exceptions=True)
+server = app.server
 # Define the index page layout
 app.layout = html.Div(id='body', className='fullscreen', children=[
     dcc.Location(id='url', refresh=False),
@@ -96,9 +96,6 @@ def callback_function(account_name, procedure_name, procedure1, procedure2):
                                                                                               procedure1, procedure2)
     return fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8, indicators_comparative
 
-
-app = Dash(__name__)
-server = app.server
 
 # Run the src on localhost:8050
 # if __name__ == '__main__':
