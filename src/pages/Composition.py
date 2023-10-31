@@ -17,8 +17,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-case_duration_df = pd.read_csv('Data_Definitions/complete_videos.csv')
-endoscopic_duration_df = pd.read_csv('Data_Definitions/endoscopic_dur_df_2.csv')
+case_duration_df = pd.read_csv('complete_videos.csv')
+endoscopic_duration_df = pd.read_csv('endoscopic_dur_df_2.csv')
 full_df = pd.merge(case_duration_df, endoscopic_duration_df, on="video_uuid", how="inner")
 full_df['video_length'] = full_df['video_length'].apply(lambda x: round(x/60000, 2))
 full_df['summed_case_duration'] = full_df['summed_case_duration'].apply(lambda x: round(x/60000, 2))
