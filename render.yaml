@@ -1,7 +1,7 @@
 services:
   # See https://render.com/docs/blueprint-spec for more info on render blueprints
   - type: web
-    name: arrival-deadline-offense-aec3
+    name: surgical-procedure-metrics
     env: python
     plan: free
     # A requirements.txt file must exist
