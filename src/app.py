@@ -101,6 +101,6 @@ app = Dash(__name__)
 server = app.server
 
 # Run the src on localhost:8050
-if __name__ == '__main__':
-    app.run_server(debug=True)
+# if __name__ == '__main__':
+#     app.run_server(debug=True)
 
