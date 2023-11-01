@@ -113,8 +113,8 @@ def composition_dash(account_name, procedure_name):
 
     return fig1, fig2, fig3, indicators_composition
 
-account_names = list(set(i for i in full_df['account_name'])) + ['All']
-procedure_names = list(set(i for i in full_df['snomed_code'])) + ['All']
+account_names = sorted(list(set(i for i in full_df['account_name'])), key=lambda x: int(x[9:])) + ['All']
+procedure_names = sorted(list(set(i for i in full_df['snomed_code'])), key=lambda x: int(x[10:])) + ['All']
 
 fig1, fig2, fig3, indicators_composition = composition_dash(
     'All', 'All')

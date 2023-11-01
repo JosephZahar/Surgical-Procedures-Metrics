@@ -158,13 +158,13 @@ def distribution_dash(account_name, procedure_name):
 
 fig1, fig2, fig3= distribution_dash(
     'All', 'All')
-account_dropdown = dcc.Dropdown(options=list(set([i for i in full_df['account_name']])) + ['All'],
+account_dropdown = dcc.Dropdown(options=sorted(list(set([i for i in full_df['account_name']])), key=lambda x: int(x[9:])) + ['All'],
                                 id='account_named',
                                 clearable=False,
                                 value='All', className="dbc",
                                 placeholder='Select an Account', maxHeight=400)
 
-procedure_dropdown = dcc.Dropdown(options=list(set([i for i in full_df['snomed_code']]))+ ['All'],
+procedure_dropdown = dcc.Dropdown(options=sorted(list(set([i for i in full_df['snomed_code']])), key=lambda x: int(x[10:]))+ ['All'],
                                 id='snomed_coded',
                                 clearable=False,
                                 value='All', className="dbc",

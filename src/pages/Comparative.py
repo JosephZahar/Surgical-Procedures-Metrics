@@ -230,23 +230,23 @@ fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8, indicators_comparative = compara
                                                                                           'All',
                                                                                           'laparoscopic_radical_prostatectomy_using_robotic_assistance',
                                                                                           'laparoscopic_partial_excision_of_kidney_using_robotic_assistance')
-account_dropdown = dcc.Dropdown(options=list(set([i for i in full_df['account_name']])) + ['All'],
+account_dropdown = dcc.Dropdown(options=sorted(list(set([i for i in full_df['account_name']])), key=lambda x: int(x[9:])) + ['All'],
                                 id='account_namee',
                                 clearable=False,
                                 value='All', className="dbc",
                                 placeholder='Select an Account', maxHeight=400)
 
-procedure_dropdown = dcc.Dropdown(options=list(set([i for i in full_df['snomed_code']]))+ ['All'],
+procedure_dropdown = dcc.Dropdown(options=sorted(list(set([i for i in full_df['snomed_code']])), key=lambda x: int(x[10:]))+ ['All'],
                                 id='snomed_codee',
                                 clearable=False,
                                 value='All', className="dbc",
                                 placeholder='Select a Procedure', maxHeight=100)
-procedure1_dropdown = dcc.Dropdown(options=list(set([i for i in full_df['snomed_code']])),
+procedure1_dropdown = dcc.Dropdown(options=sorted(list(set([i for i in full_df['snomed_code']])), key=lambda x: int(x[10:])),
                                 id='procedure1e',
                                 clearable=False,
                                 value='Procedure 4', className="dbc",
                                 placeholder='Select Procedure 1', maxHeight=100)
-procedure2_dropdown = dcc.Dropdown(options=list(set([i for i in full_df['snomed_code']])),
+procedure2_dropdown = dcc.Dropdown(options=sorted(list(set([i for i in full_df['snomed_code']])), key=lambda x: int(x[10:])),
                                 id='procedure2e',
                                 clearable=False,
                                 value='Procedure 6', className="dbc",
