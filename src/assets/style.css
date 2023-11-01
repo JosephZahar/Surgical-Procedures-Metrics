@@ -1,9 +1,5 @@
 #navbar .navbar-brand{font-size: xx-large}
 
-.fullscreen {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    overflow: auto;  /* To handle any internal content that might be larger than the screen */
+body {
+    zoom: 75%; /* Adjust the percentage as needed */
 }
