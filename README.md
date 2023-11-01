@@ -31,5 +31,5 @@ pip install -r requirements.txt
 Once the dependencies are installed, you can run the project:
 
 ```bash
-python index.py
+python src.index.py
 ```
