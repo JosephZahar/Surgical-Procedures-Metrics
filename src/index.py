@@ -7,9 +7,9 @@ import dash_bootstrap_components as dbc
 
 # Connect the navbar to the index
 from components import navbar
-from pages.Comparative import comparative_dash
-from pages.Composition import composition_dash
-from pages.Distribution import distribution_dash
+from src.pages.Comparative import comparative_dash
+from src.pages.Composition import composition_dash
+from src.pages.Distribution import distribution_dash
 
 
 import pathlib
