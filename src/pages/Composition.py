@@ -1,17 +1,12 @@
 # import desired libraries
 import pandas as pd
 import plotly.io as pio
-
 pio.templates.default = "simple_white"
-import plotly.offline as pyo
 import pathlib
-# pyo.init_notebook_mode()
 import plotly.graph_objects as go
-import plotly.express as px
 from dash import dcc
 from dash import html
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output
 import dash
 import warnings
 warnings.filterwarnings("ignore")
