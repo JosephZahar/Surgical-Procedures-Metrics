@@ -1,1 +1,0 @@
-web: gunicorn --chdir venv/lib/python3.7/site-packages/flask app:server
