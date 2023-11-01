@@ -7,10 +7,12 @@ import dash_bootstrap_components as dbc
 
 # Connect the navbar to the index
 from components import navbar
-from src.pages.Comparative import comparative_dash
-from src.pages.Composition import composition_dash
-from src.pages.Distribution import distribution_dash
+from pages.Comparative import comparative_dash
+from pages.Composition import composition_dash
+from pages.Distribution import distribution_dash
 
+
+import pathlib
 # Define the navbar
 nav = navbar.Navbar()
 
@@ -98,6 +100,6 @@ def callback_function(account_name, procedure_name, procedure1, procedure2):
 
 
 # Run the src on localhost:8050
-# if __name__ == '__main__':
-#     app.run_server(debug=True)
+if __name__ == '__main__':
+    app.run_server(debug=False)
 

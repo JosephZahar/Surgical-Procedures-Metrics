@@ -4,7 +4,7 @@ import plotly.io as pio
 
 pio.templates.default = "simple_white"
 import plotly.offline as pyo
-
+import pathlib
 # pyo.init_notebook_mode()
 import plotly.graph_objects as go
 import plotly.express as px
@@ -14,12 +14,13 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import dash
 import warnings
-
 warnings.filterwarnings("ignore")
 
+PATH = pathlib.Path(__file__).parent.parent
+DATA_PATH = PATH.joinpath("data").resolve()
+case_duration_df = pd.read_csv(DATA_PATH.joinpath('complete_videos.csv'))
+endoscopic_duration_df = pd.read_csv(DATA_PATH.joinpath('endoscopic_dur_df_2.csv'))
 
-case_duration_df = pd.read_csv('complete_videos.csv')
-endoscopic_duration_df = pd.read_csv('endoscopic_dur_df_2.csv')
 full_df = pd.merge(case_duration_df, endoscopic_duration_df, on="video_uuid", how="inner")
 full_df['video_length'] = full_df['video_length'].apply(lambda x: round(x/60000, 2))
 full_df['summed_case_duration'] = full_df['summed_case_duration'].apply(lambda x: round(x/60000, 2))
