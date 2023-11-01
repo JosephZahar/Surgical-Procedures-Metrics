@@ -42,7 +42,7 @@ def update_button_color(pathname):
     elif pathname == '/Comparative':
         return "outline-secondary", "outline-secondary", "light"
     else:
-        return "Light", "outline-secondary", "outline-secondary"
+        return "light", "outline-secondary", "outline-secondary"
 
 
 # Create the callback to handle mutlipage inputs
