@@ -16,7 +16,7 @@ import pathlib
 # Define the navbar
 nav = navbar.Navbar()
 
-app = Dash(__name__,meta_tags=[{"name": "viewport", "content": "width=device-width"}],
+app = Dash(__name__,meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=0.7"}],
                 external_stylesheets=[dbc.themes.BOOTSTRAP], suppress_callback_exceptions=True)
 server = app.server
 
@@ -42,7 +42,7 @@ def update_button_color(pathname):
     elif pathname == '/Comparative':
         return "outline-secondary", "outline-secondary", "light"
     else:
-        return "outline-secondary", "outline-secondary", "outline-secondary"
+        return "Light", "outline-secondary", "outline-secondary"
 
 
 # Create the callback to handle mutlipage inputs
